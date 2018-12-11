@@ -1,0 +1,45 @@
+{
+  "name": "liribot-node-app",
+  "version": "1.0.0",
+  "description": "Language Interpretation and Recognition Interface node js application",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "node-spotify-api": "^1.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianbunn/LIRIbot.git"
+  },
+  "keywords": [
+    "Language",
+    "Interpretation",
+    "and",
+    "Recognition",
+    "Interface",
+    "node",
+    "JS",
+    "application",
+    "Spotify",
+    "Bands",
+    "in",
+    "Town",
+    "API",
+    "OMDB",
+    "Axios",
+    "Moment",
+    "JS",
+    "DotEnv"
+  ],
+  "author": "irb__",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianbunn/LIRIbot/issues"
+  },
+  "homepage": "https://github.com/ianbunn/LIRIbot#readme"
+}
