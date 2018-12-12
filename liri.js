@@ -9,12 +9,14 @@ var nodeArgs = process.argv;
 var action = process.argv[2];
 var input = process.argv.slice(3).join("%20");
 
-fs.appendFile("random.txt", ", " + action, function (err) {
+// append action command to log.txt
+fs.appendFile("log.txt", ", " + action, function (err) {
     if (err) {
         return console.log("Error, error, errorrrrr....._")
     }
-
-    console.log("Logged command")
+    console.log(`\n----------LOG----------`)
+    console.log(`\nLogged command ${action}`)
+    console.log(`\n----------END LOG----------`)
 });
 
 // concert-this
@@ -25,15 +27,17 @@ function findConcerts (){
         then(function(events){
             // console.log(events.data[0]);
             if (events.data.length === 0 || events === undefined || events.data[0].lineup === undefined){
-                console.log(`\nThere are no events for the requested value.\n`)
+                console.log(`\n----------BANDS IN TOWN ERROR----------`)
+                console.log(`\nThere are no concerts for the requested value.`);
+                console.log(`\n----------END BANDS IN TOWN ERROR----------`)
             } else {
                 for(var i = 0; i < events.data.length; i++){
-                    console.log(`\n----------`);
-                    console.log(`\n• LINEUP: ${events.data[i].lineup}\r`);
-                    console.log(`\n• VENUE: ${events.data[i].venue.name}\r`);
-                    console.log(`\n• LOCATION: ${events.data[i].venue.city}, ${events.data[i].venue.country}\r`);
-                    console.log(`\n• DATE: ${Moment(events.data[i].datetime).format("MM/DD/YYYY")}\n`);
-                    console.log(`\n----------`);
+                    console.log(`\n----------BANDS IN TOWN----------`);
+                    console.log(`\n• LINEUP: ${events.data[i].lineup}`);
+                    console.log(`\n• VENUE: ${events.data[i].venue.name}`);
+                    console.log(`\n• LOCATION: ${events.data[i].venue.city}, ${events.data[i].venue.country}`);
+                    console.log(`\n• DATE: ${Moment(events.data[i].datetime).format("MM/DD/YYYY")}`);
+                    console.log(`\n----------END BANDS IN TOWN----------`);
                 }
             }
         });
@@ -42,80 +46,66 @@ function findConcerts (){
 function getSongDetails () {
     const spotify = new Spotify(keys.spotify);
 
-    if (input != null) {
-        spotify.
-            search({ type: "track", query: input }, function (err, data) {
-                if (err) {
-                    return console.log("Error occurred: " + err);
-                } else {
-                    var path = data.tracks.items[0];
-                    console.log(`\n----------`);
-                    console.log(`\n• ARTIST: ${path.artists[0].name}\r`);
-                    console.log(`\n• SONG: ${path.name}\r`);
-                    console.log(`\n• ALBUM: ${path.album.name}\r`);
-                    console.log(`\n• PREVIEW LINK: ${path.preview_url}\n`);
-                    console.log(`\n----------`);
-                }
-            });
-    } else {
-        spotify.
-            search({ type: "track", query: "Ace of Base The Sign" }, function (err, data) {
-                if (err) {
-                    return console.log("Error occurred: " + err);
-                } else {
-                    var path = data.tracks.items[0];
-                    console.log(`\n----------`);
-                    console.log(`\n• ARTIST: ${path.artists[0].name}\r`);
-                    console.log(`\n• SONG: ${path.name}\r`);
-                    console.log(`\n• ALBUM: ${path.album.name}\r`);
-                    console.log(`\n• PREVIEW LINK: ${path.preview_url}\n`);
-                    console.log(`\n----------`);
-                }
-            });
+    // If no input, set input to default value
+    if(!input){
+        input = "Ace of Base The Sign";
     }
+
+    // Get input details from spotify
+    spotify.
+        search({ type: "track", query: input }).then(function (data) {
+            // console.log(data.tracks.items[0]);
+            
+            if (data === undefined || data.tracks.items === 0 || data.tracks.items[0]===undefined) {
+                console.log(`\n----------SPOTIFY ERROR----------`);
+                console.log("\nAn error occurred, please check your song spelling.");
+                console.log(`\n----------END SPOTIFY ERROR----------`);
+            } else {
+                var path = data.tracks.items[0];
+                console.log(`\n----------SPOTIFY DETAILS----------`);
+                console.log(`\n• ARTIST: ${path.artists[0].name}`);
+                console.log(`\n• SONG: ${path.name}`);
+                console.log(`\n• ALBUM: ${path.album.name}`);
+                console.log(`\n• PREVIEW LINK: ${path.preview_url}`);
+                console.log(`\n----------END SPOTIFY DETAILS----------`);
+            }
+        });
 }
 
 function getMovieDetails () {
     var omdb = keys.omdb;
+    
+    // If no input, set input to default value
+    if(!input){
+        input = "Mr+Nobody";
+    }
 
     var queryUrl = "http://www.omdbapi.com/?t=" + input + "&y=&plot=&apikey=" + omdb;
-    if(input == "") {
-        input = "Mr+Nobody"
-        queryUrl = "http://www.omdbapi.com/?t=" + input + "&y=&plot=&apikey=" + omdb;
-        Axios.get(queryUrl).then(function (data) {
-            console.log(`\n----------`);
-            console.log(`\n• MOVIE TITLE: ${data.data.Title}\r`);
-            console.log(`\n• RELEASE YEAR: ${data.data.Year}\r`);
-            console.log(`\n• IMDB RATING: ${data.data.imdbRating}\r`);
-            console.log(`\n• ROTTEN TOMATOES RATING: ${data.data.Ratings[1].Value}\r`);
-            console.log(`\n• COUNTRY ORIGIN: ${data.data.Country}\r`);
-            console.log(`\n• PLOT: ${data.data.Plot}\r`);
-            console.log(`\n• CAST: ${data.data.Actors}\r`);
-            console.log(`\n----------`);
-        })
-    } else {
-        Axios.get(queryUrl).then(function(data){
-            // console.log(data.data)
-            if (data.data.Title === undefined) {
-                console.log("Sorry, the value you entered doesn't exist. Please check your spelling.")
+    
+    Axios.get(queryUrl).then(function(data){
+        // console.log(data.data)
+        if (data.data.Title === undefined) {
+            console.log(`\n----------OMDB ERROR----------`);
+            console.log("\nSorry, the value you entered doesn't exist. Please check your spelling.")
+            console.log(`\n----------END OMDB ERROR----------`);
+        } else {
+            console.log(`\n----------OMDB DETAILS----------`);
+            console.log(`\n• MOVIE TITLE: ${data.data.Title}`);
+            console.log(`\n• RELEASE YEAR: ${data.data.Year}`);
+            console.log(`\n• IMDB RATING: ${data.data.imdbRating}`);
+            if(data.data.Ratings.length === 1){
+                console.log(`\n• ROTTEN TOMATOES RATING: NOT APPLICABLE`);
             } else {
-                console.log(`\n----------`);
-                console.log(`\n• MOVIE TITLE: ${data.data.Title}\r`);
-                console.log(`\n• RELEASE YEAR: ${data.data.Year}\r`);
-                console.log(`\n• IMDB RATING: ${data.data.imdbRating}\r`);
-                if(data.data.Ratings.length === 1){
-                    console.log(`\n• ROTTEN TOMATOES RATING: NOT APPLICABLE\r`);
-                } else {
-                    console.log(`\n• ROTTEN TOMATOES RATING: ${data.data.Ratings[1].Value}\r`);
-                }
-                console.log(`\n• COUNTRY ORIGIN: ${data.data.Country}\r`);
-                console.log(`\n• PLOT: ${data.data.Plot}\r`);
-                console.log(`\n• CAST: ${data.data.Actors}\r`);
-                console.log(`\n----------`);
+                console.log(`\n• ROTTEN TOMATOES RATING: ${data.data.Ratings[1].Value}`);
             }
-        })
-    }
+            console.log(`\n• COUNTRY ORIGIN: ${data.data.Country}`);
+            console.log(`\n• PLOT: ${data.data.Plot}`);
+            console.log(`\n• CAST: ${data.data.Actors}`);
+            console.log(`\n----------END OMDB DETAILS----------`);
+        }
+    })
 }
+
 
 function doIt (){
 
