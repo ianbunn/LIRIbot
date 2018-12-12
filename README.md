@@ -49,4 +49,4 @@ There are multiple error handlers to indicate where the action command or the in
 
 ## Live Example
 
-![LIRIBot example](/LIRIBot-gif.gif)
+![LIRIBot example](./LIRIBot-gif.gif)
