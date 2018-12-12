@@ -7,6 +7,13 @@ const fs = require("fs");
 
 var nodeArgs = process.argv;
 var action = process.argv[2];
+
+var actions = ["concert-this", "spotify-this-song", "movie-this", "do-what-it-says"];
+
+if (actions.indexOf(action) === -1) {
+    console.log(`\n----------LOG----------\nLIRIbot doesn't know your ${action} command, please retry with one of the following:\nconcert-this\nspotify-this-song\nmovie-this\ndo-what-it-says\n----------LOG----------\n`)
+}
+
 var input = process.argv.slice(3).join("%20");
 
 // append action command to log.txt
@@ -23,24 +30,32 @@ fs.appendFile("log.txt", ", " + action, function (err) {
 function findConcerts (){
     const bandsInTown = keys.bandsInTown;
 
-    Axios.get("https://rest.bandsintown.com/artists/" + input + "/events?app_id=" + bandsInTown).
-        then(function(events){
-            // console.log(events.data[0]);
-            if (events.data.length === 0 || events === undefined || events.data[0].lineup === undefined){
-                console.log(`\n----------BANDS IN TOWN ERROR----------`)
-                console.log(`\nThere are no concerts for the requested value.`);
-                console.log(`\n----------END BANDS IN TOWN ERROR----------`)
-            } else {
-                for(var i = 0; i < events.data.length; i++){
-                    console.log(`\n----------BANDS IN TOWN----------`);
-                    console.log(`\n• LINEUP: ${events.data[i].lineup}`);
-                    console.log(`\n• VENUE: ${events.data[i].venue.name}`);
-                    console.log(`\n• LOCATION: ${events.data[i].venue.city}, ${events.data[i].venue.country}`);
-                    console.log(`\n• DATE: ${Moment(events.data[i].datetime).format("MM/DD/YYYY")}`);
-                    console.log(`\n----------END BANDS IN TOWN----------`);
+    if(!input){
+        console.log(`\n----------BANDS IN TOWN ERROR----------`)
+        console.log("\nAn error occurred. Please retry and enter an artist or band name.")
+        console.log(`\n----------BANDS IN TOWN ERROR----------`)
+    } else {
+
+        Axios.get("https://rest.bandsintown.com/artists/" + input + "/events?app_id=" + bandsInTown).
+            then(function(events){
+                // console.log(events.data[0]);
+                if (events.data.length === 0 || events === undefined || events.data[0].lineup === undefined){
+                    console.log(`\n----------BANDS IN TOWN ERROR----------`)
+                    console.log(`\nThere are no concerts for the requested value.`);
+                    console.log(`\n----------END BANDS IN TOWN ERROR----------`)
+                } else {
+                    for(var i = 0; i < events.data.length; i++){
+                        console.log(`\n----------BANDS IN TOWN----------`);
+                        console.log(`\n• LINEUP: ${events.data[i].lineup}`);
+                        console.log(`\n• VENUE: ${events.data[i].venue.name}`);
+                        console.log(`\n• LOCATION: ${events.data[i].venue.city}, ${events.data[i].venue.country}`);
+                        console.log(`\n• DATE: ${Moment(events.data[i].datetime).format("MM/DD/YYYY")}`);
+                        console.log(`\n----------END BANDS IN TOWN----------`);
+                    }
                 }
-            }
-        });
+            });
+    }
+
 }
 
 function getSongDetails () {
