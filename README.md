@@ -16,18 +16,37 @@ To use LIRIbot node js app, `git clone` this repo, and install the app's depende
 
 Dependencies used in this app are:
 
-(Installed)
-
 - Node-Spotify-API
 - Axios
-
-(Not installed yet)
-
 - Moment
 - DotEnv
+- FS
 
 These technologies work in unison to retrieve data requested using `axios` package to the following APIs:
 
 - Bands in Town
-- Spotify
 - OMDB
+
+## How To
+
+To run LIRIbot after installing all dependencies, open your CLI and run the following action commands:
+
+- `node liri concert-this + artist name`
+  - This action command will list you concerts/events for the specific artist name inputted
+
+- `node liri spotify-this-song + song name`
+  - This action command will list the Spotify details for the first song name encountered from the API response (at 0-index)
+
+- `node liri movie-this + movie name`
+  - This action command will list the movie details using OMDB API
+
+- `node liri do-what-it-says`
+  - This action command will run all action commands above with the contents of `random.txt` file
+
+## Error Handling
+
+There are multiple error handlers to indicate where the action command or the input went wrong. Please review the output in the CLI for more details.
+
+## Live Example
+
+![LIRIBot example](LIRIBot-gif.gif)
