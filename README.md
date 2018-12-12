@@ -49,4 +49,4 @@ There are multiple error handlers to indicate where the action command or the in
 
 ## Live Example
 
-![LIRIBot example](/images/LIRIBot-gif.gif)
+![LIRIBot example](https://github.com/ianbunn/LIRIbot/blob/master/images/LIRIbot-gif.gif)
