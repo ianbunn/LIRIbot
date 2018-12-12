@@ -9,6 +9,14 @@ var nodeArgs = process.argv;
 var action = process.argv[2];
 var input = process.argv.slice(3).join("%20");
 
+fs.appendFile("random.txt", ", " + action, function (err) {
+    if (err) {
+        return console.log("Error, error, errorrrrr....._")
+    }
+
+    console.log("Logged command")
+});
+
 // concert-this
 function findConcerts (){
     const bandsInTown = keys.bandsInTown;
