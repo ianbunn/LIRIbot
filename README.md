@@ -21,11 +21,16 @@ Dependencies used in this app are:
 - Moment
 - DotEnv
 - FS
+- Util
 
 These technologies work in unison to retrieve data requested using `axios` package to the following APIs:
 
 - Bands in Town
 - OMDB
+
+## Logs
+
+All history is saved in the `log.txt` file, so it is easy to review the previous action commands with input and the output to terminal/bash.
 
 ## How To
 

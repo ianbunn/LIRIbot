@@ -1,1 +1,290 @@
-do-what-it-says, do-what-it-says, do-what-it-says, concert-this, concert-this, concert-this, concert-this, concert-this, concert-this, concert-this, concert-this, concert-this, concert-this, concert-this, spotify-this-song, spotify-this-song, spotify-this-song, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, spotify-this-song, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, spotify-this-song, spotify-this-song, do-what-it-says, do-what-it-says, spotify-this-song, spotify-this-song, spotify-this-song, spotify-this-song, do-what-it-says, do-what-it-says, spotify-this-song, spotify-this-song, spotify-this-song, spotify-this-song, do-what-it-says, do-what-it-says, spotify-this-song, spotify-this-song, spotify-this-song, spotify-this-song, spotify-this-song, do-what-it-says, do-what-it-says, do-what-it-says, do-what-it-says, spotify-this-song, spotify-this-song, do-what-it-says, concert-this, concert-this, concert-this, molotov, concert-this, molotov, molotov, molotov, molotov, molotov, molotov, molotov, concert-this, concert-this, concert-this, concert-this, concert-this, concert-this, spotify-this-song, spotify-this-song, spotify-this-song, spotify-this-song, movie-this, movie-this, movie-this, do-what-it-says, molotov, concert-this, concert-this, concert-this, undefined, concert-this, concert-this, spotify-this-song, spotify-this-song, movie-this, movie-this, spotify-this-song, do-what-it-says, undefined, concert-this, concert-this, movie-this, movie-this, spotify-this-song, spotify-this-song, spotify-this-song, do-what-it-says
+movie-this the%20matrix
+----------LOG RECORD----------
+
+Logged command movie-this
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: The Matrix
+
+• RELEASE YEAR: 1999
+
+• IMDB RATING: 8.7
+
+• ROTTEN TOMATOES RATING: 88%
+
+• COUNTRY ORIGIN: USA
+
+• PLOT: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
+
+• CAST: Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
+
+----------END OMDB DETAILS----------
+, movie-this the%20godfather
+----------LOG RECORD----------
+
+Logged command movie-this
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: The Godfather
+
+• RELEASE YEAR: 1972
+
+• IMDB RATING: 9.2
+
+• ROTTEN TOMATOES RATING: 98%
+
+• COUNTRY ORIGIN: USA
+
+• PLOT: The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.
+
+• CAST: Marlon Brando, Al Pacino, James Caan, Richard S. Castellano
+
+----------END OMDB DETAILS----------
+, movie-this spider-man
+----------LOG RECORD----------
+
+Logged command movie-this
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: Spider-Man
+
+• RELEASE YEAR: 2002
+
+• IMDB RATING: 7.3
+
+• ROTTEN TOMATOES RATING: 90%
+
+• COUNTRY ORIGIN: USA
+
+• PLOT: When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.
+
+• CAST: Tobey Maguire, Willem Dafoe, Kirsten Dunst, James Franco
+
+----------END OMDB DETAILS----------
+NEW COMMAND STARTS HERE:movie-this hello%20goodbye
+----------LOG RECORD----------
+
+Logged command movie-this
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: Hello, Goodbye
+
+• RELEASE YEAR: 2008
+
+• IMDB RATING: 5.1
+
+• ROTTEN TOMATOES RATING: NOT APPLICABLE
+
+• COUNTRY ORIGIN: France, Israel, Italy
+
+• PLOT: When they move to Israel to explore their Jewish heritage and revive their flagging marriage, fifty something French emigres Alain and Gisele Gaash arrive in Tel Aviv to find their luggage ...
+
+• CAST: Fanny Ardant, Gérard Depardieu, Jean Benguigui, Lior Ashkenazi
+
+----------END OMDB DETAILS----------
+
+NEW COMMAND STARTS HERE: movie-this hannibal
+
+----------LOG RECORD----------
+
+Logged command movie-this
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: Hannibal
+
+• RELEASE YEAR: 2001
+
+• IMDB RATING: 6.8
+
+• ROTTEN TOMATOES RATING: 39%
+
+• COUNTRY ORIGIN: USA, UK
+
+• PLOT: Living in exile, Hannibal Lecter tries to reconnect with now disgraced F.B.I. Agent Clarice Starling, and finds himself a target for revenge from a powerful victim.
+
+• CAST: Anthony Hopkins, Julianne Moore, Gary Oldman, Ray Liotta
+
+----------END OMDB DETAILS----------
+
+NEW COMMAND STARTS HERE: movie-this lion%20king
+
+----------LOG RECORD----------
+
+Logged command movie-this
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: The Lion King
+
+• RELEASE YEAR: 1994
+
+• IMDB RATING: 8.5
+
+• ROTTEN TOMATOES RATING: 93%
+
+• COUNTRY ORIGIN: USA
+
+• PLOT: A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.
+
+• CAST: Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings
+
+----------END OMDB DETAILS----------
+
+NEW COMMAND STARTS HERE: do-what-it-says 
+
+----------LOG RECORD----------
+
+Logged command do-what-it-says
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: Backstreet Boys: I Want It That Way
+
+• RELEASE YEAR: 1999
+
+• IMDB RATING: 7.0
+
+• ROTTEN TOMATOES RATING: NOT APPLICABLE
+
+• COUNTRY ORIGIN: USA
+
+• PLOT: N/A
+
+• CAST: Backstreet Boys, Nick Carter, Howie Dorough, Brian Littrell
+
+----------END OMDB DETAILS----------
+
+----------SPOTIFY DETAILS----------
+
+• ARTIST: Backstreet Boys
+
+• SONG: I Want It That Way
+
+• ALBUM: The Hits--Chapter One
+
+• PREVIEW LINK: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=40198ef3c4aa40e29476a6092c9bf355
+
+----------END SPOTIFY DETAILS----------
+
+----------BANDS IN TOWN ERROR----------
+
+There are no concerts for the requested value.
+
+----------END BANDS IN TOWN ERROR----------
+
+NEW COMMAND STARTS HERE: concert-this beyonce
+
+----------LOG RECORD----------
+
+Logged command concert-this
+
+----------END LOG RECORD----------
+
+----------BANDS IN TOWN ERROR----------
+
+There are no concerts for the requested value.
+
+----------END BANDS IN TOWN ERROR----------
+
+NEW COMMAND STARTS HERE: movie-this pikachu%20detective
+
+----------LOG RECORD----------
+
+Logged command movie-this
+
+----------END LOG RECORD----------
+
+----------OMDB ERROR----------
+
+Sorry, the value you entered doesn't exist. Please check your spelling.
+
+----------END OMDB ERROR----------
+
+NEW COMMAND STARTS HERE: movie-this pikachu
+
+----------LOG RECORD----------
+
+Logged command movie-this
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: Pokémon: Vol. 1: I Choose You! Pikachu!
+
+• RELEASE YEAR: 1999
+
+• IMDB RATING: 6.6
+
+• ROTTEN TOMATOES RATING: NOT APPLICABLE
+
+• COUNTRY ORIGIN: Japan
+
+• PLOT: N/A
+
+• CAST: Veronica Taylor, Eric Stuart, Ted Lewis, Rachael Lillis
+
+----------END OMDB DETAILS----------
+
+NEW COMMAND STARTS HERE: do-what-it-says 
+
+----------LOG RECORD----------
+
+Logged command do-what-it-says
+
+----------END LOG RECORD----------
+
+----------OMDB DETAILS----------
+
+• MOVIE TITLE: Backstreet Boys: I Want It That Way
+
+• RELEASE YEAR: 1999
+
+• IMDB RATING: 7.0
+
+• ROTTEN TOMATOES RATING: NOT APPLICABLE
+
+• COUNTRY ORIGIN: USA
+
+• PLOT: N/A
+
+• CAST: Backstreet Boys, Nick Carter, Howie Dorough, Brian Littrell
+
+----------END OMDB DETAILS----------
+
+----------BANDS IN TOWN ERROR----------
+
+There are no concerts for the requested value.
+
+----------END BANDS IN TOWN ERROR----------
+
+----------SPOTIFY DETAILS----------
+
+• ARTIST: Backstreet Boys
+
+• SONG: I Want It That Way
+
+• ALBUM: The Hits--Chapter One
+
+• PREVIEW LINK: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=40198ef3c4aa40e29476a6092c9bf355
+
+----------END SPOTIFY DETAILS----------

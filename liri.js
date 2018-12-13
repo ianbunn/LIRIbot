@@ -4,8 +4,7 @@ const Spotify = require("node-spotify-api");
 const Axios = require("axios");
 const Moment = require("moment");
 const fs = require("fs");
-
-var nodeArgs = process.argv;
+const util = require('util');
 
 // Saving argument from CLI
 var action = process.argv[2];
@@ -21,7 +20,7 @@ if (actions.indexOf(action) === -1) {
 var input = process.argv.slice(3).join("%20");
 
 // Append action command to log.txt
-fs.appendFile("log.txt", ", " + action, function (err) {
+fs.appendFile("log.txt", `\nNEW COMMAND STARTS HERE: ${action} ${input}\n`, function (err) {
     if (err) {
         return console.log("Error, error, errorrrrr....._")
     }
@@ -29,6 +28,17 @@ fs.appendFile("log.txt", ", " + action, function (err) {
     console.log(`\nLogged command ${action}`)
     console.log(`\n----------END LOG RECORD----------`)
 });
+
+// Append the terminal output to log.txt
+var logFile = fs.createWriteStream('log.txt', { flags: 'a' });
+// Or 'w' to truncate the file every time the process starts.
+var logStdout = process.stdout;
+
+console.log = function () {
+    logFile.write(util.format.apply(null, arguments) + '\n');
+    logStdout.write(util.format.apply(null, arguments) + '\n');
+}
+console.error = console.log;
 
 // concert-this action command
 function findConcerts (){
